@@ -112,3 +112,40 @@ Route::get('tes-tni/{nama?}/{bb?}/{umur?}', function ($a = null, $b = null, $c =
     }
 
 });
+// model Post
+Route::get('/testmodel', function() {
+    $query = App\Post::all();
+    return $query;
+    });
+Route::get('/testmodel/1', function() {
+    $query = App\Post::find(2);
+    return $query;
+    });
+Route::get('/testmodel/2', function() {
+    $query = App\Post::where('title','like','%cepat nikah%')->get();
+    return $query;
+    });
+Route::get('/testmodel/3', function() {
+    $post = App\Post::find(1);
+    $post->title = "Ciri Keluarga Sakinah";
+    $post->save();
+    return $post;
+});
+Route::get('/testmodel/4', function() {
+    $post = App\Post::find(1);
+    $post->delete();
+    });
+Route::get('/testmodel/5', function() {
+    $post = new App\Post;
+    $post->title = "7 Amalan Pembuka Jodoh";
+    $post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+    $post->save();
+    return $post;
+// check record baru di database
+    });
+
+// model students
+Route::get('/testmodel-siswa', function() {
+        $query = App\Student::all();
+        return $query;
+});

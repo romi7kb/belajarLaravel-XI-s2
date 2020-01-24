@@ -122,7 +122,7 @@ Route::get('/testmodel/1', function() {
     return $query;
     });
 Route::get('/testmodel/2', function() {
-    $query = App\Post::where('title','like','%cepat nikah%')->get();
+    $query = App\Post::where('title','like','%Jodoh%')->get();
     return $query;
     });
 Route::get('/testmodel/3', function() {
@@ -149,3 +149,28 @@ Route::get('/testmodel-siswa', function() {
         $query = App\Student::all();
         return $query;
 });
+// Model books
+Route::get('data-buku/ambil3', function ()
+{
+    $data = App\Book::all()
+    ->take(3);
+    return $data;
+});
+Route::get('data-buku/select', function ()
+{
+    $data = App\Book::select('judul','pengarang','penerbit')->first();
+    return $data;
+});
+Route::get('data-buku/tambahbuku/{judul}/{pengarang}/{penerbit}/{tahunTerbit}/{kategori}/{harga}/{jumlahhalaman}', function($judul,$pengarang,$penerbit,$tahun,$kategori,$harga,$jumlahhal) {
+    $post = new App\Book;
+    $post->judul = $judul;
+    $post->pengarang = $pengarang;
+    $post->penerbit = $penerbit;
+    $post->tahun_terbit = $tahun;
+    $post->kategori_buku = $kategori;
+    $post->harga = $harga;
+    $post->jumlah_halaman = $jumlahhal;
+    $post->save();
+    return $post;
+// check record baru di database
+    });

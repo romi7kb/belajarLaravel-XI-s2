@@ -174,3 +174,10 @@ Route::get('data-buku/tambahbuku/{judul}/{pengarang}/{penerbit}/{tahunTerbit}/{k
     return $post;
 // check record baru di database
     });
+    Route::get('latihan','LatihanController@halo');
+    Route::get('latihan-tambah/{bil?}/{bil1?}','LatihanController@pertambahan');
+    Route::get('latihan-kurang/{bil?}/{bil1?}','LatihanController@pengurangan');
+    Route::get('latihan-kali/{bil?}/{bil1?}','LatihanController@perkalian');
+    Route::get('latihan-bagi/{bil?}/{bil1?}','LatihanController@pembagian');
+    Route::get('latihan-data1','LatihanController@loop');
+    Route::get('latihan-data2','LatihanController@loop2');

@@ -174,6 +174,7 @@ Route::get('data-buku/tambahbuku/{judul}/{pengarang}/{penerbit}/{tahunTerbit}/{k
     return $post;
 // check record baru di database
     });
+    // controller
     Route::get('latihan','LatihanController@halo');
     Route::get('latihan-tambah/{bil?}/{bil1?}','LatihanController@pertambahan');
     Route::get('latihan-kurang/{bil?}/{bil1?}','LatihanController@pengurangan');
@@ -181,3 +182,15 @@ Route::get('data-buku/tambahbuku/{judul}/{pengarang}/{penerbit}/{tahunTerbit}/{k
     Route::get('latihan-bagi/{bil?}/{bil1?}','LatihanController@pembagian');
     Route::get('latihan-data1','LatihanController@loop');
     Route::get('latihan-data2','LatihanController@loop2');
+    // Tabungan
+    Route::get('tabungan','TabunganController@index');
+    Route::get('tabungan/show/{id}','TabunganController@show');
+    Route::get('tabungan/tambah/{nis}/{nama}/{kelas}/{jml}','TabunganController@store');
+    Route::get('tabungan/edit/{id}/{nis}/{nama}/{kelas}/{jml}','TabunganController@edit');
+    Route::get('tabungan/delete/{id}','TabunganController@delete');
+    // Customer
+    Route::get('customer','CustomerController@index');
+    Route::get('customer/show/{id}','CustomerController@show');
+    Route::get('customer/tambah/{kode_customer}/{name}/{email}/{country}/{city}/{address}/{contact_number}','CustomerController@store');
+    Route::get('customer/edit/{id}/{kode_customer}/{name}/{email}/{country}/{city}/{address}/{contact_number}','CustomerController@edit');
+    Route::get('customer/delete/{id}','CustomerController@delete');

@@ -194,3 +194,8 @@ Route::get('data-buku/tambahbuku/{judul}/{pengarang}/{penerbit}/{tahunTerbit}/{k
     Route::get('customer/tambah/{kode_customer}/{name}/{email}/{country}/{city}/{address}/{contact_number}','CustomerController@store');
     Route::get('customer/edit/{id}/{kode_customer}/{name}/{email}/{country}/{city}/{address}/{contact_number}','CustomerController@edit');
     Route::get('customer/delete/{id}','CustomerController@delete');
+    Route::get('customer/about','CustomerController@about');
+    // Passing
+    Route::get('pass','PracticeController@pass');
+    Route::get('pass1','PracticeController@pass1');
+    Route::get('pass2','PracticeController@pass2');

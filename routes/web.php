@@ -199,3 +199,7 @@ Route::get('data-buku/tambahbuku/{judul}/{pengarang}/{penerbit}/{tahunTerbit}/{k
     Route::get('pass','PracticeController@pass');
     Route::get('pass1','PracticeController@pass1');
     Route::get('pass2','PracticeController@pass2');
+    Route::get('pass3/{id}','PracticeController@pass3');
+    // Buku
+    Route::get('Daftar-buku','BookController@index');
+    Route::get('Daftar-buku/{id}','BookController@show');

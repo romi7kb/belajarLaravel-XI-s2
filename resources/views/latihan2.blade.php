@@ -12,7 +12,16 @@
 Nis : {{$val->nis}} <br>
 Nama : {{$val->nama}} <br>
 Kelas : {{$val->kelas}} <br>
-Jumlah : {{$val->jml}}
+Jumlah : {{$val->jml}} <br>
+@if($val->jml>25000)
+Paket : "C"
+@elseif($val->jml>10000)
+Paket : "B"
+@elseif($val->jml>=1000)
+Paket : "A"
+@else
+Paket : "NULL"
+@endif
 <hr>
 @endforeach
 
